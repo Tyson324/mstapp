@@ -3,55 +3,30 @@
   <head>
   	<meta charset="utf-8">
     <title>
-      Welcome!
+      Loop
     </title>
-    <link rel="stylesheet" href="css/metro-bootstrap.css">
-    <link rel="stylesheet" href="css/metro-bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link href="css/iconFont.css" rel="stylesheet">
+    
     
     <script type="text/javascript" src="js/jquery-1.11.1.min.js">
     </script>
-    <script src="js/metro.min.js">
-    </script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
     <script type="text/javascript" src="js/main.js">
     </script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
   </head>
-  <body class="metro">
+  <body>
     
     
-    <form id="loginScreen">
-      <fieldset>
-        <legend>
-          Login
-        </legend>
-        <label>
-          Username
-        </label>
-        <div class="input-control text" data-role="input-control">
-          <input type="text" placeholder="type text">
-          <button class="btn-clear" tabindex="-1">
-          </button>
-        </div>
-        <label>
-          Password
-        </label>
-        <div class="input-control password" data-role="input-control">
-          <input type="password" placeholder="type password" autofocus>
-          <button class="btn-reveal" tabindex="-1">
-          </button>
-        </div>
-        <div class="input-control checkbox" data-role="input-control">
-          <label>
-            <input type="checkbox" checked id="firstTime" />
-            <span class="check">
-            </span>
-            It's my first time!
-          </label>
-        </div> 
-        <input type="submit" value="Submit" id="usr">
-      </fieldset>
-    </form>
+    <div id="logInForm">
+      <center>
+          <h1 id="wlcmHead">Welcome.</h1>
+          <input type="text" name="username" value="Username" id="usr">
+          <input type="password" name="password" value="Password" id="psw">
+          <button id="logInSubmit">Submit</button>
+        </center>
+    </div>
     
     <div id="firstTimeScreen">
     	
