@@ -111,6 +111,8 @@ table {
 
 #firstTimeScreen {
 	width: 100%;
+	font-family: SEGOEUIL;
+	color: white;
 	height: 100%;
 }
 #wlcmHead{
