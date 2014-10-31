@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$('#mainScreen').hide();
 	$('#firstTimeScreen').hide();
+  $('#loginTriged').hide();
 	Parse.initialize("KC1eJ0pORqFD9mnj6jxrFTKlHKE5Ou32d8ULgOkR", "DiSSicuCql0ZE9FH4tghrRDY5pv8CZtQMq7jBipQ");
 	
 	function signIn(){
@@ -48,5 +49,9 @@ $(document).ready(function(){
 	$('#logInSubmit').click(function(){
 		signIn();
 	});
+  $('#logInTrigger').click(function(){
+    $('#furst').fadeOut(1);
+    $('#loginTriged').fadeIn( 900 );
+  });
 
 });
