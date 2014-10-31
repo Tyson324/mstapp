@@ -78,7 +78,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+@font-face {
+	font-family: 'SEGOEUIL';
+	src: url('../fonts/SEGOEUIL.eot');
+	src: local('SEGOEUIL'), url('../fonts/SEGOEUIL.woff') format('woff'), url('../font/SEGOEUIL.ttf') format('truetype');
+}
 #loadingScreen {
 	width: 100%;
 	height: 100%;
@@ -109,6 +113,7 @@ table {
 	height: 100%;
 }
 #wlcmHead{
+	font-family: SEGOEUIL;
 	margin-bottom: 140px;
 	font-size: 90px;
 }
