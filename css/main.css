@@ -23,6 +23,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+@font-face {
+	font-family: 'SEGOEUIL';
+	src: url('../fonts/SEGOEUIL.eot');
+	src: local('SEGOEUIL'), url('../fonts/SEGOEUIL.woff') format('woff'), url('../font/SEGOEUIL.ttf') format('truetype');
+}
 body {
 	line-height: 1;
 	width: 100%;
