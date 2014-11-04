@@ -52,6 +52,11 @@ $(document).ready(function(){
   $('#logInTrigger').click(function(){
     $('#furst').fadeOut(1);
     $('#loginTriged').fadeIn( 900 );
+
+  });
+  $('#loog').submit(function(event){
+  	event.preventDefault();
+    signIn();
   });
 
 });
