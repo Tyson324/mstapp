@@ -34,7 +34,7 @@ $(document).ready(function(){
             }
           },
           error: function (error) {
-            alert('Sorry, those login details are incorrect.');
+            //alert('Sorry, those login details are incorrect.');
           }
         });
         //End Authentication
