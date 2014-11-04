@@ -34,13 +34,13 @@ $(document).ready(function(){
             }
           },
           error: function (error) {
-            alert('Error: ' + error.code + ' ' + error.message);
+            alert('Whoops, those login things are wrong! Please check them again.');
           }
         });
         //End Authentication
       },
       error: function (user, error) {
-        alert('Error: ' + error.code + ' ' + error.message);
+        alert('Whoops, those login things are wrong! Please check them again.');
       }
     });
 	}
