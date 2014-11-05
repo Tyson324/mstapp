@@ -34,7 +34,7 @@ $(document).ready(function(){
             }
           },
           error: function (error) {
-            //alert('Sorry, those login details are incorrect.');
+            alert('Hmm, it seems something internal has gone wrong. It is not your fault, but try again or let me know : t-sonego');
           }
         });
         //End Authentication
@@ -54,6 +54,7 @@ $(document).ready(function(){
     $('#loginTriged').fadeIn( 900 );
 
   });
+
   $('#loog').submit(function(event){
   	event.preventDefault();
     signIn();
