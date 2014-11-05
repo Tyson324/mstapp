@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	$('#mainScreen').hide();
 	$('#firstTimeScreen').hide();
-  $('#loginTriged').hide();
+  	$('#loginTriged').hide();
+  	$('#loginLoading').fadeOut();
 	Parse.initialize("KC1eJ0pORqFD9mnj6jxrFTKlHKE5Ou32d8ULgOkR", "DiSSicuCql0ZE9FH4tghrRDY5pv8CZtQMq7jBipQ");
 	
 	function signIn(){
@@ -34,7 +35,7 @@ $(document).ready(function(){
             }
           },
           error: function (error) {
-            alert('Hmm, it seems something internal has gone wrong. It is not your fault, but try again or let me know : t-sonego');
+            alert('Hmm, it seems something internal has gone wrong. It is not your fault, but try again or let me know: t-sonego');
           }
         });
         //End Authentication
@@ -50,6 +51,7 @@ $(document).ready(function(){
 		signIn();
 	});
   $('#logInTrigger').click(function(){
+
     $('#furst').fadeOut(1);
     $('#loginTriged').fadeIn( 900 );
 

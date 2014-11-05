@@ -30,7 +30,7 @@ body {
 	height: 100%;
 	background-color: rgba(0, 120, 255, 1);
 	position: absolute;
-	background-image: url("../images/bg.svg");
+	background-image: url("../images/bg.jpg");
 	background-repeat: no-repeat;
 
 
@@ -96,7 +96,7 @@ table {
 
 #logInForm {
 
-	background: rgba(38, 38, 38, 0.21);
+	background: rgba(38, 38, 38, 0.74);
 	width: 400px;
 	height: 400px;
 	margin-top: 155px;
