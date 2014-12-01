@@ -25,7 +25,7 @@ $(document).ready(function(){
               if (firstTime) {
               		$('#logInForm').fadeOut( 200 );
               		alert("yay, you are logged in! more to come soon. Want to complain? email t-sonego@microsoft.com");
-              }else{
+              }else if(!firstTime){
               		$('#logInForm').fadeOut( 200 );
               		alert("yay, you are logged in! more to come soon. Want to complain? email t-sonego@microsoft.com");
               }
