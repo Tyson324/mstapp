@@ -30,8 +30,7 @@ body {
 	height: 100%;
 	background-color: rgba(0, 120, 255, 1);
 	position: absolute;
-	background-image: url("../images/bg.jpg");
-	background-repeat: no-repeat;
+	
 
 
 }
@@ -104,6 +103,17 @@ table {
 	margin-right: auto;
 	padding: 5px;
 	
+}
+#start{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position:center;
+
+}
 }
 
 #mainScreen {
