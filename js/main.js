@@ -2,7 +2,9 @@ $(document).ready(function(){
 	$('#mainScreen').hide();
 	$('#firstTimeScreen').hide();
   	$('#loginTriged').hide();
+    $('.container').hide();
   	$('#loginLoading').fadeOut();
+    $('.container').hide();
 	Parse.initialize("KC1eJ0pORqFD9mnj6jxrFTKlHKE5Ou32d8ULgOkR", "DiSSicuCql0ZE9FH4tghrRDY5pv8CZtQMq7jBipQ");
 	
 	function signIn(){
@@ -23,8 +25,10 @@ $(document).ready(function(){
               var object = results[i];
               var firstTime = object.get("FirstTime")
               if (firstTime) {
-              		$('#logInForm').fadeOut( 200 );
-              		alert("yay, you are logged in! more to come soon. Want to complain? email t-sonego@microsoft.com");
+              		//$('#logInForm').fadeOut( 200 );
+              		//askQuestions();
+                  window.location.replace("../mstapp/MinimalForm/index.html");
+
               }else if(!firstTime){
               		$('#logInForm').fadeOut( 200 );
               		alert("yay, you are logged in! more to come soon. Want to complain? email t-sonego@microsoft.com");
@@ -46,7 +50,31 @@ $(document).ready(function(){
     });
 	}
 
+  function askQuestions(){
+    $('#start').fadeOut(200);
+    $('.container').fadeIn(100);
+    $('link[href="css/main.css"]').attr('href','css/component.css');
+    $('link[href="css/jquery-ui.css"]').attr('href','css/demo.css');
+    var theForm = document.getElementById( 'theForm' );
 
+      new stepsForm( theForm, {
+        onSubmit : function( form ) {
+          // hide form
+          classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+          /*
+          form.submit()
+          or
+          AJAX request (maybe show loading indicator while we don't have an answer..)
+          */
+
+          // let's just simulate something...
+          var messageEl = theForm.querySelector( '.final-message' );
+          messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+          classie.addClass( messageEl, 'show' );
+        }
+      } );
+  }
 	$('#logInSubmit').click(function(){
 		signIn();
 	});
