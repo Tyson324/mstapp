@@ -85,6 +85,42 @@ $(document).ready(function(){
 
   });
 
+  $('#a').click(function(){
+      event.preventDefault();
+    var Homework = Parse.Object.extend("UserSpecifiedInfo");
+       var homework = new Homework();
+
+       var subject = $('#q1').val();
+       var studentName = $('#q2').val();
+       var hlcontent = $('#q3').val();
+       var subject1 = $('#q4').val();
+       var studentName2 = $('#q5').val();
+       var hlcontent3 = $('#q6').val();
+ 
+        homework.set("q1", subject);
+        homework.set("q2", studentName);
+        homework.set("q3", hlcontent);
+        homework.set("q4", subject1);
+        homework.set("q5", studentName2);
+        homework.set("q6", hlcontent3);
+ 
+        homework.save(null, {
+          success: function(tableobject) {
+            // Execute any logic that should take place after the object is saved.
+            alert('New object created with objectId: ' + tableobject.id);
+            var SubjectSaveId = tableobject.id
+
+            window.location.replace("../mstapp/DragDropInteractions/index.html"); 
+          },
+          error: function(tableobject, error) {
+            // Execute any logic that should take place if the save fails.
+            // error is a Parse.Error with an error code and description.
+            alert('Failed to create new object, with error code: ' + error.description);
+          }
+        });
+
+  });
+
   $('#loog').submit(function(event){
   	event.preventDefault();
     signIn();
