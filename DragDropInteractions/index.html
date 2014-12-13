@@ -15,6 +15,7 @@
 		<script src="js/jquery-ui.js"></script>
 	</head>
 	<body>
+	<div id="profile"></div>
 		<div class="container">
 			<div class="content">
 				<header class="codrops-header">
@@ -94,7 +95,7 @@
 								// hide dropArea
 								//classie.remove( dropArea, 'show' );
 								// remove class 'drag-active' from body
-								window.location.replace("../DragDropInteractions/index2.html");
+								
 								classie.remove( body, 'drag-active' );
 								
 							};
@@ -102,10 +103,8 @@
 							if( !wasDropped ) {
 								afterDropFn();
 							}
-							else {
-								// after some time hide drop area and remove class 'drag-active' from body
-								clearTimeout( dropAreaTimeout );
-								dropAreaTimeout = setTimeout( afterDropFn, 400 );
+							if(wasDropped){
+								window.location.replace("../DragDropInteractions/index2.html");
 							}
 						}
 					} );
