@@ -109,7 +109,7 @@ a:hover, a:focus {
 
 section {
 	padding: 5em 2em 10em;
-	background: #FFF;
+	background: rgba(255, 255, 255, 0.96);
 	text-align: center;
 }
 
