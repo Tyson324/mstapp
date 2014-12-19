@@ -50,7 +50,7 @@
 	height: 0;
 	-webkit-transition: visibility 0s 0.4s, height 0s 0.4s;
 	transition: visibility 0s 0.4s, height 0s 0.4s;
-	color: white;
+	color: #655C5C;
 }
 
 .questions li.current,

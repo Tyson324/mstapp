@@ -15,7 +15,10 @@
 .clearfix:after { clear: both; }
 
 body {
-	background: #2E8DEF;
+	background-image: url("../images/bg.png");
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position:center;
 	color: rgba(0,0,0,0.45);
 	font-size: 100%;
 	line-height: 1.25;
@@ -43,7 +46,7 @@ a:hover, a:focus {
 	margin: 0;
 	font-weight: 400;
 	font-size: 2.5em;
-	color: white;
+	color: #A4A1A1;
 }
 
 .codrops-header h1 span {
@@ -106,7 +109,7 @@ a:hover, a:focus {
 
 section {
 	padding: 5em 2em 10em;
-	background: #2672EC;
+	background: #FFF;
 	text-align: center;
 }
 
