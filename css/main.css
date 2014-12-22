@@ -95,7 +95,7 @@ table {
 
 #logInForm {
 
-	background: rgba(38, 38, 38, 0.74);
+	background: rgba(231, 231, 231, 0.74);
 	width: 400px;
 	height: 400px;
 	margin-top: 155px;
@@ -147,6 +147,7 @@ border: none;
     margin-top: 70px;
     width: 100px;
     height: 60px;
+    background-color:rgba(206, 204, 204, 0.58);
 }
 #logInSubmit{
 	font-family: SEGOEUIL;
