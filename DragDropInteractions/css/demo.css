@@ -40,10 +40,10 @@ a {
 	background-color: blue;
 }3
 
-#one{
+#onee{
 	background: none repeat scroll 0% 0% #F34D23;
-	width: 276px;
-	height: 276px;
+	width: 300px;
+	height: 300px;
 }
 #two{
 	background: none repeat scroll 0% 0% #7DB902;
@@ -57,6 +57,11 @@ a {
 }
 #four{
 	background: none repeat scroll 0% 0% #FCB501;
+	width: 300px;
+	height: 300px;
+}
+#five{
+	background: none repeat scroll 0% 0% #F34D23;
 	width: 300px;
 	height: 300px;
 }
