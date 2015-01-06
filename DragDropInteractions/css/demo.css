@@ -42,15 +42,23 @@ a {
 
 #one{
 	background: none repeat scroll 0% 0% #F34D23;
+	width: 276px;
+	height: 276px;
 }
 #two{
 	background: none repeat scroll 0% 0% #7DB902;
+	width: 276px;
+	height: 176px;
 }
 #three{
 	background: none repeat scroll 0% 0% #01A3EE;
+	width: 276px;
+	height: 176px;
 }
 #four{
 	background: none repeat scroll 0% 0% #FCB501;
+	width: 276px;
+	height: 176px;
 }
 
 a:hover, a:focus {
