@@ -47,18 +47,18 @@ a {
 }
 #two{
 	background: none repeat scroll 0% 0% #7DB902;
-	width: 276px;
-	height: 176px;
+	width: 300px;
+	height: 300px;
 }
 #three{
 	background: none repeat scroll 0% 0% #01A3EE;
-	width: 276px;
-	height: 176px;
+	width: 300px;
+	height: 300px;
 }
 #four{
 	background: none repeat scroll 0% 0% #FCB501;
-	width: 276px;
-	height: 176px;
+	width: 300px;
+	height: 300px;
 }
 
 a:hover, a:focus {
