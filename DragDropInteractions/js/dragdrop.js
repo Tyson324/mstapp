@@ -222,6 +222,7 @@
 			if( droppableEl.isDroppable( instance.element ) ) {
 				dropped = true;
 				droppableEl.collect( instance.element );
+				$('#dropItems').append(instance.element);
 			}
 		}
 
@@ -240,7 +241,7 @@
 				onEndTransition( instance.element, function() {
 					classie.remove( instance.element, 'is-complete' );
 					classie.remove( instance.element, 'is-dropped' );
-					$('#dropItems').append( $('#five') );
+					//$('#dropItems').append( $('#five') );
 				} );
 			}, 25 );
 		}
