@@ -240,6 +240,7 @@
 				onEndTransition( instance.element, function() {
 					classie.remove( instance.element, 'is-complete' );
 					classie.remove( instance.element, 'is-dropped' );
+					$('#dropItems').append( $('#five') );
 				} );
 			}, 25 );
 		}
