@@ -10,6 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/bottom-area.css" />
 		<script src="js/modernizr.custom.js"></script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -53,6 +55,7 @@
 		<script src="js/draggabilly.pkgd.min.js"></script>
 		<script src="js/dragdrop.js"></script>
 		<script>
+		$(document).ready(function(){var content = $.cookie("rented_car");$('#drop-area').append('<div class="module">' + content + '</div>');});
 			(function() {
 				var body = document.body,
 					dropArea = document.getElementById( 'drop-area' ),

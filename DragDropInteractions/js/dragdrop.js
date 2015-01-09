@@ -223,6 +223,8 @@
 				dropped = true;
 				droppableEl.collect( instance.element );
 				$('#dropItems').append(instance.element);
+				alert($(instance.element).html());
+				$.cookie("searchTerms",$(instance.element).html());
 			}
 		}
 
