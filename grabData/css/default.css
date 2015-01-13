@@ -20,11 +20,14 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 .clearfix:after { clear: both; }
 
 body {
-	font-family: 'Lato', Calibri, Arial, sans-serif;
-	color: #ffe8e7;
-	background: #E96D65;
-	font-weight: 300;
-	overflow-x: hidden;
+	background-image: url("bg.png");
+background-repeat: no-repeat;
+background-size: 100% auto;
+background-position: center center;
+color: rgba(0, 0, 0, 0.45);
+font-size: 100%;
+line-height: 1.25;
+font-family: "Lato",Arial,sans-serif;
 }
 
 a {
@@ -130,6 +133,14 @@ a:active {
 
 .codrops-icon-about:before {
 	content: "\e003";
+}
+
+#nugget{
+    
+    margin-bottom: 35px;
+background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.74);
+text-align: center;
+
 }
 
 @media screen and (max-width: 25em) {

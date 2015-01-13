@@ -17,45 +17,43 @@
 		<div class="container demo-1">
 			<!-- Top Navigation -->
 			<div class="codrops-top clearfix">
-				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/MorphingDevices/"><span>Previous Demo</span></a>
-				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=15139"><span>Back to the Codrops Article</span></a></span>
+				
 			</div>
 			<header>
-				<h1>Natural Language Form <span>with custom input elements</span></h1>	
+				<h1>Hey there! <span>Tell us a little about yourself.</span></h1>	
 			</header>
-			<div class="main clearfix">
+            <div id="nugget">
+                <div class="main clearfix">
 				<form id="nl-form" class="nl-form">
-					I feel to eat 
+					My preferred name is <input type="text" value="" placeholder="Name" data-subline="This will be on your profile here at loop!"/>
+					
+					and I am located in
 					<select>
-						<option value="1" selected>any food</option>
-						<option value="2">Indian</option>
-						<option value="3">French</option>
-						<option value="4">Japanese</option>
-						<option value="2">Italian</option>
+						<option value="1" selected>TVP</option>
+						
 					</select>
-					<br />in a
+				
 					<select>
-						<option value="1" selected>standard</option>
-						<option value="2">fancy</option>
-						<option value="3">hip</option>
-						<option value="4">traditional</option>
-						<option value="2">romantic</option>
+						<option value="1" selected>Building 1</option>
+						<option value="2">Building 2</option>
+						<option value="3">Building 3</option>
+						<option value="4">Building 4</option>
+						<option value="2">Building 5</option>
 					</select>
-					restaurant
-					<br />at 
 					<select>
-						<option value="1" selected>anytime</option>
-					 	<option value="1">7 p.m.</option>
-					 	<option value="2">8 p.m.</option>
-					 	<option value="3">9 p.m.</option>
+						<option value="1" selected>Floor 1</option>
+					 	<option value="1">Floor 2</option>
+					 	<option value="2">Floor 3</option>
 					</select>
-					in <input type="text" value="" placeholder="any city" data-subline="For example: <em>Los Angeles</em> or <em>New York</em>"/>
+					
 					<div class="nl-submit-wrap">
-						<button class="nl-submit" type="submit">Find a restaurant</button>
+						<button class="nl-submit" id="submit"type="submit">Done!</button>
 					</div>
 					<div class="nl-overlay"></div>
 				</form>
 			</div>
+            </div>
+			
 		</div><!-- /container -->
 		<script src="js/nlform.js"></script>
 		<script>
