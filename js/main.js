@@ -27,7 +27,7 @@ $(document).ready(function(){
               if (firstTime) {
               		//$('#logInForm').fadeOut( 200 );
               		//askQuestions();
-                  window.location.replace("../grabData/index.html");
+                  window.location.replace("grabData/index.html");
 
               }else if(!firstTime){
               		$('#logInForm').fadeOut( 200 );
