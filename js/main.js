@@ -23,17 +23,18 @@ $(document).ready(function(){
           {
             for (var i = 0; i < results.length; i++) {
               var object = results[i];
-              var firstTime = object.get("FirstTime")
+              var firstTime = object.get("FirstTime");
               if (firstTime) {
               		//$('#logInForm').fadeOut( 200 );
               		//askQuestions();
+                  
                   window.location.replace("grabData/index.html");
 
               }else if(!firstTime){
               		$('#logInForm').fadeOut( 200 );
-              		alert("yay, you are logged in! more to come soon. Want to complain? email t-sonego@microsoft.com");
+              		window.location.replace("DragDropInteractions/index.html");
               }
-                $('.userType').text("Welcome, " + Usersname);
+                //$('.userType').text("Welcome, " + Usersname);
                 
               
             }

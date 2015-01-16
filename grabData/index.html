@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr.custom.js"></script>
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
 	</head>
 	<body class="nl-blurred">
 		<div class="container demo-1">
@@ -26,25 +27,25 @@
             <div id="nugget">
                 <div class="main clearfix">
 				<form id="nl-form" class="nl-form">
-					My preferred name is <input type="text" value="" placeholder="Name" data-subline="This will be on your profile here at loop!"/>
+					My preferred name is <input type="text" value="" id="asdf" placeholder="Name" data-subline="This will be on your profile here at loop!"/>
 					
 					and I am located in
-					<select>
-						<option value="1" selected>TVP</option>
+					<select id="asd">
+						<option value="TVP" selected>TVP</option>
 						
 					</select>
 				
-					<select>
-						<option value="1" selected>Building 1</option>
-						<option value="2">Building 2</option>
-						<option value="3">Building 3</option>
-						<option value="4">Building 4</option>
-						<option value="2">Building 5</option>
+					<select id="as">
+						<option value="Building 1" selected>Building 1</option>
+						<option value="Building 2">Building 2</option>
+						<option value="Building 3">Building 3</option>
+						<option value="Building 4">Building 4</option>
+						<option value="Building 2">Building 5</option>
 					</select>
-					<select>
-						<option value="1" selected>Floor 1</option>
-					 	<option value="1">Floor 2</option>
-					 	<option value="2">Floor 3</option>
+					<select id="ad">
+						<option value="Floor 1" selected>Floor 1</option>
+					 	<option value="Floor 2">Floor 2</option>
+					 	<option value="Floor 3">Floor 3</option>
 					</select>
 					
 					<div class="nl-submit-wrap">
@@ -59,7 +60,56 @@
 		<script src="js/nlform.js"></script>
 		<script>
 			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
-            $('#submit').click( function(event){event.preventDefault(); window.location.replace("../DragDropInteractions/index.html");})
+
+			Parse.initialize("KC1eJ0pORqFD9mnj6jxrFTKlHKE5Ou32d8ULgOkR", "DiSSicuCql0ZE9FH4tghrRDY5pv8CZtQMq7jBipQ");
+
+
+      
+            $('#submit').click( 
+              function(event){
+
+              	event.preventDefault();
+
+                
+
+                  //var user = Parse.User.current();
+                  //user.fetch().then(function(fetchedUser){ window.Usersname = fetchedUser.getUsername();}, function(error){alert(error.message)});
+
+                
+
+
+                  var putUserData = Parse.Object.extend('profileData');
+	              var userData = new putUserData();
+	              var perfName = $('#asdf').val();
+	              var site = $('#asd').val();
+	              var building = $('#as').val();
+	              var floor = $('#ad').val(); 
+	              userData.set('User', "test");
+	              userData.set('perfName', perfName);
+	              userData.set('site', site);
+	              userData.set('building', building);
+	              userData.set('floor', floor);
+	              userData.save(null, {
+                success: function (tableobject) {
+                  // Execute any logic that should take place after the object is saved.
+                  alert('New object created with objectId: ' + tableobject.id);
+                  var SubjectSaveId = tableobject.id
+                },
+                error: function (tableobject, error) {
+                  // Execute any logic that should take place if the save fails.
+                  // error is a Parse.Error with an error code and description.
+                  alert('Failed to create new object, with error code: ' + error.description);
+                }
+              });
+          	
+
+                });
+
+              
+
+
+              window.location.replace("../DragDropInteractions/index.html");});
+
 		</script>
 	</body>
 </html>
