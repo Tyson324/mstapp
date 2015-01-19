@@ -307,7 +307,7 @@ $('#submitnl').click(
 
                 
 
-                  var putUserData = Parse.Object.extend('profileData');
+                var putUserData = Parse.Object.extend('profileData');
                 var userData = new putUserData();
                 var perfName = $('#asdf').val();
                 var site = $('#asd').val();
@@ -329,20 +329,21 @@ $('#submitnl').click(
 
 
                     var user = Parse.User.current();
-                    alert(user);
+                    //alert(user);
 
                     user.save(null, {
                       success: function(user) {
                         user.set("FirstTime", false);
                         user.save();
-                      }
+                      }, error: function(error){ alert(error.description);}
+
                     });
 
 
 
-                  window.location.replace("../DragDropInteractions/index.html");
+                  //window.location.replace("../DragDropInteractions/index.html");
 
-                  startMainDrag();
+                  //startMainDrag();
 
                 },
                 error: function (tableobject, error) {
