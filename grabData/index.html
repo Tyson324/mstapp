@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Natural Language Form</title>
-		<meta name="description" content="Natural Language Form with custom text input and drop-down lists" />
-		<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico"> 
+		<title>Loop</title> 
+
+
+
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+
+
+
+		
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
         <script src="http://www.parsecdn.com/js/parse-1.3.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
 	</head>
-	<body class="nl-blurred">
+	<body>
 		<div class="container demo-1">
 			<!-- Top Navigation -->
 			<div class="codrops-top clearfix">
@@ -49,7 +50,7 @@
 					</select>
 					
 					<div class="nl-submit-wrap">
-						<button class="nl-submit" id="submit" type="submit">Done!</button>
+						<button class="nl-submit" type="submit">Done!</button>
 					</div>
 					<div class="nl-overlay"></div>
 				</form>
@@ -59,21 +60,19 @@
 		</div><!-- /container -->
 		<script src="js/nlform.js"></script>
 		<script>
+
 			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
 
 			Parse.initialize("KC1eJ0pORqFD9mnj6jxrFTKlHKE5Ou32d8ULgOkR", "DiSSicuCql0ZE9FH4tghrRDY5pv8CZtQMq7jBipQ");
 
 
       
-            $('#submit').click( 
+            $('#submitnl').click( 
               function(event){
 
               	event.preventDefault();
 
                 
-
-                  //var user = Parse.User.current();
-                  //user.fetch().then(function(fetchedUser){ window.Usersname = fetchedUser.getUsername();}, function(error){alert(error.message)});
 
                 
 
@@ -83,8 +82,9 @@
 	              var perfName = $('#asdf').val();
 	              var site = $('#asd').val();
 	              var building = $('#as').val();
-	              var floor = $('#ad').val(); 
-	              userData.set('User', "test");
+	              var floor = $('#ad').val();
+	              var user = $.cookie('username');
+	              userData.set('User', user);
 	              userData.set('perfName', perfName);
 	              userData.set('site', site);
 	              userData.set('building', building);
@@ -92,8 +92,29 @@
 	              userData.save(null, {
                 success: function (tableobject) {
                   // Execute any logic that should take place after the object is saved.
+
+
+
+
+
                   alert('New object created with objectId: ' + tableobject.id);
                   var SubjectSaveId = tableobject.id
+
+
+
+                  	var user = Parse.User.current();
+                  	alert(user);
+
+                  	user.save(null, {
+                  		success: function(user) {
+                  			user.set("FirstTime", false);
+                  			user.save();
+                  		}
+                  	});
+
+
+
+                  window.location.replace("../DragDropInteractions/index.html");
                 },
                 error: function (tableobject, error) {
                   // Execute any logic that should take place if the save fails.
@@ -108,7 +129,7 @@
               
 
 
-              window.location.replace("../DragDropInteractions/index.html");});
+              
 
 		</script>
 	</body>

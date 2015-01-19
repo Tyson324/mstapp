@@ -2,8 +2,6 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>L∞p</title>
 		<script src="js/modernizr.custom.js"></script>
 		<script src="js/jquery-1.11.1.min.js"></script>
@@ -16,29 +14,31 @@
 		<script src="js/jquery-ui.js"></script>
 	</head>
 	<body>
-	<div id="profile"></div>
-		<div class="container">
-			<div class="content">
-				<header class="codrops-header">
-					<h1>Welcome!<span id="olo">The tiles below are search terms. Don't be shy, drag one!</span></h1>
-				</header>
-				<div id="grid" class="grid clearfix">
-					<div class="grid__item" id="five">Departments</div>
-					<div class="grid__item" id="two">Internal Resources</div>
-					<div class="grid__item" id="three">Products</div>
-					<div class="grid__item" id="four">Skills</div>
+		<div>
+			<div id="profile"></div>
+			<div class="container">
+				<div class="content">
+					<header class="codrops-header">
+						<h1>Welcome!<span id="olo">The tiles below are search terms. Don't be shy, drag one!</span></h1>
+					</header>
+					<div id="grid" class="grid clearfix">
+						<div class="grid__item" id="five">Departments</div>
+						<div class="grid__item" id="two">Internal Resources</div>
+						<div class="grid__item" id="three">Products</div>
+						<div class="grid__item" id="four">Skills</div>
+					</div>
+				</div><!-- /content -->
+			</div><!-- /container -->
+			<div id="drop-area" class="drop-area">
+				<div id="dropItems">
+					<div class="drop-area__item"><div class="dummy"></div></div>
+					
 				</div>
-			</div><!-- /content -->
-		</div><!-- /container -->
-		<div id="drop-area" class="drop-area">
-			<div id="dropItems">
-				<div class="drop-area__item"><div class="dummy"></div></div>
-				
 			</div>
+			<div class="drop-overlay"></div>
+			<script src="js/draggabilly.pkgd.min.js"></script>
+			<script src="js/dragdrop.js"></script>
 		</div>
-		<div class="drop-overlay"></div>
-		<script src="js/draggabilly.pkgd.min.js"></script>
-		<script src="js/dragdrop.js"></script>
 
 		
 		<script>
