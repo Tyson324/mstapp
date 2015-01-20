@@ -346,7 +346,30 @@ $(document).ready(function(){
 
 
 
+
+
 $('#backBtn').on('click', function(){
+
+
+    $(this).closest("div").fadeOut(100);
+    $('#mainCon').fadeIn(100);
+
+});
+$('#backBtn1').on('click', function(){
+
+
+    $(this).closest("div").fadeOut(100);
+    $('#mainCon').fadeIn(100);
+
+});
+$('#backBtn2').on('click', function(){
+
+
+    $(this).closest("div").fadeOut(100);
+    $('#mainCon').fadeIn(100);
+
+});
+$('#backBtn3').on('click', function(){
 
 
     $(this).closest("div").fadeOut(100);
