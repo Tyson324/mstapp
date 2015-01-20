@@ -176,6 +176,71 @@
 
 
 
+      (function() {
+        var body = document.body,
+          dropArea = document.getElementById( 'drop-area' ),
+          droppableArr = [], dropAreaTimeout;
+
+        // initialize droppables
+        [].slice.call( document.querySelectorAll( '#drop-area .drop-area__item' )).forEach( function( el ) {
+          droppableArr.push( new Droppable( el, {
+            onDrop : function( instance, draggableEl ) {
+              // show checkmark inside the droppabe element
+              classie.add( instance.el, 'drop-feedback' );
+              clearTimeout( instance.checkmarkTimeout );
+              instance.checkmarkTimeout = setTimeout( function() { 
+                classie.remove( instance.el, 'drop-feedback' );
+              }, 800 );
+              // ...
+            }
+          } ) );
+        } );
+
+        // initialize draggable(s)
+        [].slice.call(document.querySelectorAll( '#grid .grid__item' )).forEach( function( el ) {
+          new Draggable( el, droppableArr, {
+            draggabilly : { containment: document.body },
+            onStart : function() {
+              // add class 'drag-active' to body
+              classie.add( body, 'drag-active' );
+              // clear timeout: dropAreaTimeout (toggle drop area)
+              clearTimeout( dropAreaTimeout );
+              // show dropArea
+              classie.add( dropArea, 'show' );
+            },
+            onEnd : function( wasDropped ) {
+              var afterDropFn = function() {
+                
+                // hide dropArea
+                classie.remove( dropArea, 'show' );
+                // remove class 'drag-active' from body
+                
+                classie.remove( body, 'drag-active' );
+                
+              };
+
+              if( !wasDropped ) {
+                classie.remove( dropArea, 'show' );
+                afterDropFn();
+              }
+              if(wasDropped){
+
+                //window.location.replace("../DragDropInteractions/index2.html");
+
+                alert("ow");
+
+
+              }
+            }
+          } );
+        } );
+      })();
+
+
+
+
+
+
 $(document).ready(function(){
 
   var nlform = new NLForm( document.getElementById( 'nl-form' ) );
@@ -211,7 +276,8 @@ $(document).ready(function(){
 
               }else if(!firstTime){
               		$('#logInForm').fadeOut( 200 );
-              		window.location.replace("DragDropInteractions/index.html");
+              		//window.location.replace("DragDropInteractions/index.html");
+                  startMainDrag();
               }
                
               
@@ -239,16 +305,20 @@ $(document).ready(function(){
     $('.container').fadeIn(100);
 
 
-    
-
-
   }
 
   function startMainDrag(){
 
     $('.container').fadeOut(100);
-    $("link[id='grabData_def']").attr('href', '');
-    $("link[id='grabData_comp']").attr('href', '');
+    $('#selector .container').fadeIn(100);
+    $('#start').fadeOut(100);
+    $("link[id='logincss']").attr('href', '');
+    $("link[id='grabData_def']").attr('href', 'css/mainDrag/normalize.css');
+    $("link[id='grabData_comp']").attr('href', 'fonts/font-awesome-4.2.0/css/font-awesome.min.css');
+    $("link[id='grabData_comp2']").attr('href', 'css/mainDrag/demo.css');
+    $("link[id='grabData_comp3']").attr('href', 'css/mainDrag/bottom-area.css');
+
+    $('#mainScreen').fadeIn(100);
 
   }
 
@@ -263,41 +333,6 @@ $(document).ready(function(){
 
   });
 
-  $('#a').click(function(){
-      event.preventDefault();
-      var Homework = Parse.Object.extend("UserSpecifiedInfo");
-       var homework = new Homework();
-
-       var subject = $('#q1').val();
-       var studentName = $('#q2').val();
-       var hlcontent = $('#q3').val();
-       var subject1 = $('#q4').val();
-       var studentName2 = $('#q5').val();
-       var hlcontent3 = $('#q6').val();
- 
-        homework.set("q1", subject);
-        homework.set("q2", studentName);
-        homework.set("q3", hlcontent);
-        homework.set("q4", subject1);
-        homework.set("q5", studentName2);
-        homework.set("q6", hlcontent3);
- 
-        homework.save(null, {
-          success: function(tableobject) {
-            // Execute any logic that should take place after the object is saved.
-            alert('New object created with objectId: ' + tableobject.id);
-            var SubjectSaveId = tableobject.id
-
-            window.location.replace("../mstapp/DragDropInteractions/index.html"); 
-          },
-          error: function(tableobject, error) {
-            // Execute any logic that should take place if the save fails.
-            // error is a Parse.Error with an error code and description.
-            alert('Failed to create new object, with error code: ' + error.description);
-          }
-        });
-
-  });
 
 
 $('#submitnl').click( 
