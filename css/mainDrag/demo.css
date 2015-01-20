@@ -37,13 +37,38 @@ a {
 
 #profile{
 
-	border: 1px solid black;
+	border: 1px solid #C9C9C9;
+position: absolute;
+width: 220px;
+height: 70px;
+top: 10px;
+right: 20px;
+background-color: #E4E4E4;
+}
+
+#prof{
 	position: absolute;
-	width: 220px;
-	height: 70px;
-	top: 10px;
-	right: 20px;
-	background-color: blue;
+	bottom: 1px;
+	right: 1px;
+	border: none;
+	background: none;
+}
+
+#usersName{
+	position: absolute;
+	right: 5px;
+	font-family: "SWAGO";
+	top: -35px;
+	font-size: 28px;
+}
+
+#logOut{
+	position: absolute;
+	bottom: 1px;
+	left: 1px;
+	border: none;
+	background: none;
+
 }
 
 #onee{

@@ -245,6 +245,9 @@ $(document).ready(function(){
 
   var nlform = new NLForm( document.getElementById( 'nl-form' ) );
 
+
+  
+
 	$('#mainScreen').hide();
 	$('#firstTimeScreen').hide();
   	$('#loginTriged').hide();
@@ -257,8 +260,20 @@ $(document).ready(function(){
   	$('#loginLoading').fadeOut();
     $('.container').hide();
 	Parse.initialize("KC1eJ0pORqFD9mnj6jxrFTKlHKE5Ou32d8ULgOkR", "DiSSicuCql0ZE9FH4tghrRDY5pv8CZtQMq7jBipQ");
+
+  if (Parse.User.current() != null) {
+    $('#usersName').text($.cookie('username'));
+    $('#logInForm').fadeOut( 200 );
+                  
+                  startMainDrag();
+
+  };
 	
 	function signIn(){
+
+
+
+
 
     var username = $('#usr').val();
     var password = $('#psw').val();
@@ -282,7 +297,7 @@ $(document).ready(function(){
 
               }else if(!firstTime){
               		$('#logInForm').fadeOut( 200 );
-              		//window.location.replace("DragDropInteractions/index.html");
+              		$('#usersName').text($.cookie('username'));
                   startMainDrag();
               }
                
@@ -345,7 +360,14 @@ $(document).ready(function(){
   });
 
 
+$('#logOut').click(function(){
 
+
+  Parse.User.logOut();
+  location.reload();
+
+
+});
 
 
 $('#backBtn').on('click', function(){
@@ -404,7 +426,7 @@ $('#submitnl').click(
                 success: function (tableobject) {
                   // Execute any logic that should take place after the object is saved.
 
-                  alert('New object created with objectId: ' + tableobject.id);
+                  //alert('New object created with objectId: ' + tableobject.id);
                   var SubjectSaveId = tableobject.id
 
 
@@ -422,9 +444,9 @@ $('#submitnl').click(
 
 
 
-                  //window.location.replace("../DragDropInteractions/index.html");
-
-                  //startMainDrag();
+                  $('#drag').fadeOut( 200 );
+                  $('#usersName').text($.cookie('username'));
+                  startMainDrag();
 
                 },
                 error: function (tableobject, error) {
