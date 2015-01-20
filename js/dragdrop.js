@@ -225,7 +225,12 @@
 				$('#dropItems').append(instance.element);
 				$('#swag').append(instance.element);
 				alert($(instance.element).html());
-				$.cookie("searchTerms",$(instance.element).html());
+				if ($(instance.element).html() == "Products") {
+					$('#mainCon').fadeOut(100);
+					$( '#mainCon' ).replaceWith( $( '#proCon' ) );
+					$('#proCon').fadeIn(100);
+				};
+				//$.cookie("searchTerms",$(instance.element).html());
 			}
 		}
 

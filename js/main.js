@@ -248,6 +248,12 @@ $(document).ready(function(){
 	$('#mainScreen').hide();
 	$('#firstTimeScreen').hide();
   	$('#loginTriged').hide();
+    
+    $('#depCon').hide();
+    $('#skiCon').hide();
+    $('#proCon').hide();
+    $('#intCon').hide();
+
   	$('#loginLoading').fadeOut();
     $('.container').hide();
 	Parse.initialize("KC1eJ0pORqFD9mnj6jxrFTKlHKE5Ou32d8ULgOkR", "DiSSicuCql0ZE9FH4tghrRDY5pv8CZtQMq7jBipQ");
