@@ -224,12 +224,38 @@
 				droppableEl.collect( instance.element );
 				$('#dropItems').append(instance.element);
 				$('#swag').append(instance.element);
-				alert($(instance.element).html());
-				if ($(instance.element).html() == "Products") {
-					$('#mainCon').fadeOut(100);
-					$( '#mainCon' ).replaceWith( $( '#proCon' ) );
-					$('#proCon').fadeIn(100);
-				};
+				//alert($(instance.element).html());
+
+
+				switch ($(instance.element).html()) {
+				    case "Products":
+				        $('#mainCon').fadeOut(100);
+						$( '#mainCon' ).replaceWith( $( '#proCon' ) );
+						$('#proCon').fadeIn(100);
+						break;
+				    case "Departments":
+				        $('#mainCon').fadeOut(100);
+						$( '#mainCon' ).replaceWith( $( '#depCon' ) );
+						$('#depCon').fadeIn(100);
+				        break;
+				    case "Internal Resources":
+				        $('#mainCon').fadeOut(100);
+						$( '#mainCon' ).replaceWith( $( '#intCon' ) );
+						$('#intCon').fadeIn(100);
+				        break;
+				    case "Skills":
+				        $('#mainCon').fadeOut(100);
+						$( '#mainCon' ).replaceWith( $( '#skiCon' ) );
+						$('#skiCon').fadeIn(100);
+				        break;
+				}
+
+
+				//if ($(instance.element).html() == "Products") {
+				//	$('#mainCon').fadeOut(100);
+				//	$( '#mainCon' ).replaceWith( $( '#proCon' ) );
+				//	$('#proCon').fadeIn(100);
+				//};
 				//$.cookie("searchTerms",$(instance.element).html());
 			}
 		}
