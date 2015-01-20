@@ -230,22 +230,22 @@
 				switch ($(instance.element).html()) {
 				    case "Products":
 				        $('#mainCon').fadeOut(100);
-						$( '#mainCon' ).replaceWith( $( '#proCon' ) );
+						//$( '#mainCon' ).replaceWith( $( '#proCon' ) );
 						$('#proCon').fadeIn(100);
 						break;
 				    case "Departments":
 				        $('#mainCon').fadeOut(100);
-						$( '#mainCon' ).replaceWith( $( '#depCon' ) );
+						//$( '#mainCon' ).replaceWith( $( '#depCon' ) );
 						$('#depCon').fadeIn(100);
 				        break;
 				    case "Internal Resources":
 				        $('#mainCon').fadeOut(100);
-						$( '#mainCon' ).replaceWith( $( '#intCon' ) );
+						//$( '#mainCon' ).replaceWith( $( '#intCon' ) );
 						$('#intCon').fadeIn(100);
 				        break;
 				    case "Skills":
 				        $('#mainCon').fadeOut(100);
-						$( '#mainCon' ).replaceWith( $( '#skiCon' ) );
+						//$( '#mainCon' ).replaceWith( $( '#skiCon' ) );
 						$('#skiCon').fadeIn(100);
 				        break;
 				}

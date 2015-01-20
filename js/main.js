@@ -248,7 +248,7 @@ $(document).ready(function(){
 	$('#mainScreen').hide();
 	$('#firstTimeScreen').hide();
   	$('#loginTriged').hide();
-    
+
     $('#depCon').hide();
     $('#skiCon').hide();
     $('#proCon').hide();
@@ -313,6 +313,11 @@ $(document).ready(function(){
 
   }
 
+   function goBack(){
+    $(this).parent().parent().fadeOut(100);
+    $('#mainCon').fadeIn(100);
+  }
+
   function startMainDrag(){
 
     $('.container').fadeOut(100);
@@ -338,6 +343,18 @@ $(document).ready(function(){
     $('#loginTriged').fadeIn( 900 );
 
   });
+
+
+
+$('#backBtn').on('click', function(){
+
+
+    $(this).closest("div").fadeOut(100);
+    $('#mainCon').fadeIn(100);
+
+});
+
+
 
 
 
