@@ -346,6 +346,9 @@ $(document).ready(function(){
 
     $('#mainScreen').fadeIn(100);
 
+
+       
+
   }
 
 
@@ -399,6 +402,44 @@ $('#backBtn3').on('click', function(){
 
 });
 
+
+$("#prof").click( function(event){
+  event.preventDefault();
+
+  //alert($(this).closest('div').attr('id'));
+
+  if ( !($(this).closest('div').hasClass("isDown")) ) {
+
+    $( $(this).closest('div') )
+    .animate({ width: "60%" }, 1000 )
+    .animate({ height: "40%" }, 1000 )
+    .animate({ borderLeftWidth: "15px" }, 1000 );
+    $($(this).closest('div')).css({'border-left-color': '#C64444'});
+    $('#profPic').css('background-image','url(' + 'images/' + $.cookie('username') + '.jpg' +')');
+    $("#profPic")
+    .animate({ width: "96px" }, 900 )
+    .animate({ height: "96px" }, 900 );
+
+        
+
+    $($(this).closest('div')).addClass("isDown");
+  } else {
+
+    $("#profPic")
+    .animate({ width: "0px" }, 100 )
+    .animate({ height: "0px" }, 100 );
+
+
+    $( $(this).closest('div') )
+    .animate({ width: "220px" }, 1000 )
+    .animate({ height: "70px" }, 1000 )
+    .animate({ borderLeftWidth: "1px" }, 1000 );
+
+     $($(this).closest('div')).css({'border-left-color': '#C9C9C9'});
+    $($(this).closest('div')).removeClass("isDown");
+  }
+  return false;
+});
 
 
 

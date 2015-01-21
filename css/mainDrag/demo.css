@@ -44,6 +44,7 @@ height: 70px;
 top: 10px;
 right: 20px;
 background-color: #E4E4E4;
+z-index: 1;
 }
 
 #prof{
@@ -54,9 +55,27 @@ background-color: #E4E4E4;
 	background: none;
 }
 
+#profPic{
+
+	position: absolute;
+	left: 10px;
+	background-image: url('');
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position:center;
+	width: 0px;
+	height: 0px;
+	top: 40px;
+}
+
+#profInfo p{
+	font-family: "SWAGO";
+}
+
 #usersName{
 	position: absolute;
-	right: 5px;
+	margin-left: auto;
+	margin-right: auto;
 	font-family: "SWAGO";
 	top: -35px;
 	font-size: 28px;
