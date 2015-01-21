@@ -268,6 +268,32 @@ $(document).ready(function(){
                   startMainDrag();
 
   };
+
+
+  function grabTheD(){
+     var Auth = Parse.Object.extend('profileData');
+        var query = new Parse.Query(Auth);
+        query.equalTo('User', $.cookie('username'));
+        query.find({
+          success: function (results)
+          {
+            for (var i = 0; i < results.length; i++) {
+              var object = results[i];
+              alert(object.get("site"));
+              $.cookie('site',object.get("site"));
+              $.cookie('building',object.get("building"));
+              $.cookie('floor',object.get("floor"));
+              $.cookie('perf',object.get("perfName"));
+              
+              
+            }
+          },
+          error: function (error) {
+            
+          }
+        });
+  };
+
 	
 	function signIn(){
 
@@ -299,6 +325,7 @@ $(document).ready(function(){
               		$('#logInForm').fadeOut( 200 );
               		$('#usersName').text($.cookie('username'));
                   startMainDrag();
+                  grabTheD();
               }
                
               
@@ -419,8 +446,8 @@ $("#prof").click( function(event){
     $("#profPic")
     .animate({ width: "96px" }, 900 )
     .animate({ height: "96px" }, 900 );
-
-        
+    $(this).closest('div').append('<p>' + $.cookie('site') + $.cookie('building') + $.cookie('floor') + $.cookie('perf') + '</p>');
+    
 
     $($(this).closest('div')).addClass("isDown");
   } else {
@@ -488,6 +515,7 @@ $('#submitnl').click(
                   $('#drag').fadeOut( 200 );
                   $('#usersName').text($.cookie('username'));
                   startMainDrag();
+                  grabTheD();
 
                 },
                 error: function (tableobject, error) {
