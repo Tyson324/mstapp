@@ -447,7 +447,7 @@ $("#prof").click( function(event){
     .animate({ height: "96px" }, 900 );
     $(this).closest('div').append('<p>' + $.cookie('site') + $.cookie('building') + $.cookie('floor') + $.cookie('perf') + '</p>');
     $('.tomove').animate({top: "500px"},1000);
-    $('.tomove2').animate({top: "1000px"},1000);
+    $('.tomove2').animate({top: "920px"},1000);
 
     $($(this).closest('div')).addClass("isDown");
   } else {
