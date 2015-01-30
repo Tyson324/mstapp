@@ -438,7 +438,6 @@ $("#prof").click( function(event){
   if ( !($(this).closest('div').hasClass("isDown")) ) {
 
     $( $(this).closest('div') )
-    .animate({ width: "60%" }, 1000 )
     .animate({ height: "40%" }, 1000 )
     .animate({ borderLeftWidth: "15px" }, 1000 );
     $($(this).closest('div')).css({'border-left-color': '#C64444'});
@@ -447,7 +446,8 @@ $("#prof").click( function(event){
     .animate({ width: "96px" }, 900 )
     .animate({ height: "96px" }, 900 );
     $(this).closest('div').append('<p>' + $.cookie('site') + $.cookie('building') + $.cookie('floor') + $.cookie('perf') + '</p>');
-    
+    $('.tomove').animate({top: "500px"},1000);
+    $('.tomove2').animate({top: "1000px"},1000);
 
     $($(this).closest('div')).addClass("isDown");
   } else {
@@ -461,6 +461,8 @@ $("#prof").click( function(event){
     .animate({ width: "220px" }, 1000 )
     .animate({ height: "70px" }, 1000 )
     .animate({ borderLeftWidth: "1px" }, 1000 );
+    $('.tomove').animate({top: "100px"},1000);
+    $('.tomove2').animate({top: "520px"},1000);
 
      $($(this).closest('div')).css({'border-left-color': '#C9C9C9'});
     $($(this).closest('div')).removeClass("isDown");
@@ -469,7 +471,14 @@ $("#prof").click( function(event){
 });
 
 
+$('#more').click(function(){
 
+alert("ow");
+
+  $('#slidein').animate({width: "180px"}, 1000);
+
+
+});
 
 $('#submitnl').click( 
               function(event){
