@@ -279,7 +279,7 @@ $(document).ready(function(){
           {
             for (var i = 0; i < results.length; i++) {
               var object = results[i];
-              alert(object.get("site"));
+              //alert(object.get("site"));
               $.cookie('site',object.get("site"));
               $.cookie('building',object.get("building"));
               $.cookie('floor',object.get("floor"));
