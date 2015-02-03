@@ -226,6 +226,13 @@
 				$('#swag').append(instance.element);
 				//alert($(instance.element).html());
 
+				if (!($(instance.element).html() == "Departments"||$(instance.element).html() == "Internal Resources"||$(instance.element).html() == "Products"||$(instance.element).html() == "Skills")) {
+					searchTerms = searchTerms + $(instance.element).html() + " ";
+				alert(searchTerms);
+				};
+
+				
+
 
 				switch ($(instance.element).html()) {
 				    case "Products":
