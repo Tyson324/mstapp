@@ -581,9 +581,6 @@ $(document).ready(function () {
 
             $($(this).closest('div'))
                 .animate({
-                    width: "220px"
-                }, 1000)
-                .animate({
                     height: "70px"
                 }, 1000)
                 .animate({
