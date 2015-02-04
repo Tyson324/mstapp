@@ -309,6 +309,14 @@ $(document).ready(function () {
 
       },{success: function(result){},error: function(){}});
 
+      }else{
+
+        for(i = 0; i < searchTerms.length; i++){
+          query = new Parse.Query('skillsMap');
+          query.equalTo(searchTerms[i])
+          query.find()
+        }
+
       };
 
       
@@ -317,56 +325,6 @@ $(document).ready(function () {
       
     }
 
-    function getSearchRess() {
-    //Get what is being searched for
-    //Display those results
-    var thins = searchTerms.split(" ");
-    alert(thins[0])
-    if (thins.length == 1) {
-
-        var studentQuery = Parse.Object.extend('skillsMap');
-        var query = new Parse.Query(studentQuery);
-        query.equalTo(thins[0], $.cookie('username'))
-        query.find({
-            success: function (results) {
-                // Do something with the returned Parse.Object values
-                for (var i = 0; i < results.length + 1; i++) {
-                    var object = results[i];
-                    $('#searchRes').append('<div>' + '<div class="resultsContent">' + object.get('Uzer') + thins[0] +'</div>' + '<button></button>' + '</div>');
-                }
-
-            },
-            error: function (error) {
-                alert('Error: ' + error.code + ' ' + error.message);
-            }
-        });
-
-    } else {
-        for (i = 0; i < thins.length; i++) {
-
-
-
-            var studentQuery = Parse.Object.extend('skillsMap');
-            var query = new Parse.Query(studentQuery);
-            query.notContainedIn(thins[i], ['test','suitcase']);
-            query.find({
-                success: function (results) {
-                    // Do something with the returned Parse.Object values
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        $('#searchRes').append('<div>' + '<div class="resultsContent">' + object.get('username') + thins[i] +'</div>' + '<button></button>' + '</div>');
-                    }
-                },
-                error: function (error) {
-                    alert('Error: ' + error.code + ' ' + error.message);
-                }
-            });
-
-
-        }
-    };
-
-}
 
 
     function grabTheD() {
