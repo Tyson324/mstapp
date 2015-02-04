@@ -269,7 +269,7 @@ $(document).ready(function () {
     var nlform = new NLForm(document.getElementById('nl-form'));
 
 
-    window.searchTerms = "";
+    window.searchTerms = [];
 
 
     $('#mainScreen').hide();
@@ -293,22 +293,46 @@ $(document).ready(function () {
         startMainDrag();
 
     };
+    function getSearchRes(){
 
-    function getSearchRes() {
+      
+
+      if (searchTerms.length == 1) {
+
+        aTest = new Parse.Query('skillsMap');
+      aTest.each(function(result){
+        
+        if (!(result.get(searchTerms[0]) === undefined)) {
+          $('#searchRes').append('<div class="resultsContent">' + result.get(searchTerms[0]) +" "+ searchTerms[0] +'</div>');
+        };
+        
+
+      },{success: function(result){},error: function(){}});
+
+      };
+
+      
+
+
+      
+    }
+
+    function getSearchRess() {
     //Get what is being searched for
     //Display those results
     var thins = searchTerms.split(" ");
+    alert(thins[0])
     if (thins.length == 1) {
 
         var studentQuery = Parse.Object.extend('skillsMap');
         var query = new Parse.Query(studentQuery);
-        query.notContainedIn('Uzer', $.cookie('username'))
+        query.equalTo(thins[0], $.cookie('username'))
         query.find({
             success: function (results) {
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length + 1; i++) {
                     var object = results[i];
-                    $('#searchRes').append('<div>' + '<div class="resultsContent">' + object.get('Uzer') + thins[i] +'</div>' + '<button></button>' + '</div>');
+                    $('#searchRes').append('<div>' + '<div class="resultsContent">' + object.get('Uzer') + thins[0] +'</div>' + '<button></button>' + '</div>');
                 }
 
             },
@@ -456,7 +480,7 @@ $(document).ready(function () {
 
     $('#initSearch').click(function(){
       getSearchRes();
-
+      $('#searchRes').fadeIn(300);
     })
 
     $('#logInSubmit').click(function () {
