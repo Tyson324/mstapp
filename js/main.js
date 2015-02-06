@@ -314,18 +314,26 @@ $(document).ready(function () {
        
 
         for(i = 0; i < searchTerms.length; i++){
+          alert(searchTerms.length);
           query = new Parse.Query('skillsMap');
           query.each(function(result){
 
+            var thing = (result.get(searchTerms[i])).toString();
+
             if(!(result.get(searchTerms[i]) === undefined)){
+
+              alert('ow' + thing);
 
               $('.resultsContent').each( function(){
 
-                var tect = []; 
+                var tect = [];
+
                 tect = ($(this).text()).split(" ");
-                if (tect[0] == results.get(searchTerms[i])) {
-                  
-                  $(this).append(searchTerms[i]);
+                
+
+                if (tect[0] == thing) {
+
+                  $(this).append( " " + searchTerms[i]);
                   //$('#searchRes').append('<div class="resultsContent">' + result.get(searchTerms[i]) +" "+ searchTerms[i] +'</div>');
                 };
                  
@@ -339,7 +347,7 @@ $(document).ready(function () {
 
 
 
-          },error: function(){}});
+          },error: function(){alert(error.message)}});
         }
 
       };
