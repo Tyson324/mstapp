@@ -313,8 +313,13 @@ $(document).ready(function () {
 
         for(i = 0; i < searchTerms.length; i++){
           query = new Parse.Query('skillsMap');
-          query.equalTo(searchTerms[i])
-          query.find()
+          query.each(function(result){
+
+            if(!(result.get(searchTerms[i]) === undefined)){
+              $('#searchRes').append('<div class="resultsContent">' + result.get(searchTerms[i]) +" "+ searchTerms[i] +'</div>');
+            }
+
+          },{success: function(result){},error: function(){}});
         }
 
       };
