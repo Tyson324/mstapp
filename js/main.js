@@ -311,15 +311,35 @@ $(document).ready(function () {
 
       }else{
 
+       
+
         for(i = 0; i < searchTerms.length; i++){
           query = new Parse.Query('skillsMap');
           query.each(function(result){
 
             if(!(result.get(searchTerms[i]) === undefined)){
-              $('#searchRes').append('<div class="resultsContent">' + result.get(searchTerms[i]) +" "+ searchTerms[i] +'</div>');
+
+              $('.resultsContent').each( function(){
+
+                var tect = []; 
+                tect = ($(this).text()).split(" ");
+                if (tect[0] == results.get(searchTerms[i])) {
+                  
+                  $(this).append(searchTerms[i]);
+                  //$('#searchRes').append('<div class="resultsContent">' + result.get(searchTerms[i]) +" "+ searchTerms[i] +'</div>');
+                };
+                 
+
+              } );
+              
+              
             }
 
-          },{success: function(result){},error: function(){}});
+          },{success: function(result){
+
+
+
+          },error: function(){}});
         }
 
       };
