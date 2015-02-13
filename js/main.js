@@ -497,7 +497,7 @@ $(document).ready(function () {
     });
 
 
-    $('#logOut').click(function () {
+    $('#logOut').click(function logOut() {
 
 
         Parse.User.logOut();
