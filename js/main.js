@@ -293,7 +293,7 @@ $(document).ready(function () {
         startMainDrag();
 
     };
-    function getSearchRes(){
+    function getSearchRes() {
 
       
 
@@ -428,10 +428,22 @@ $(document).ready(function () {
                 //End Authentication
             },
             error: function (user, error) {
-                alert('Sorry, those login details are incorrect.');
+				shake($('#logInForm'));
+               //$('#logInForm').shake();
             }
         });
     }
+	
+	function shake(div,interval,distance,times){
+		interval = 80;
+		distance = 10;
+		times = 3;
+    $(div).css('position','relative');
+    for(var iter=0;iter<(times+1);iter++){
+        $(div).animate({ left: ((iter%2==0 ? distance : distance*-1))}, interval);
+    }//for
+    $(div).animate({ left: 0},interval);
+}//shake
 
     function askQuestions() {
         $("link[id='logincss']").attr('href', '');
