@@ -28,6 +28,18 @@ body {
 
 }
 
+nav  ul  li  a {
+    display: block;
+    padding: 12px 25px;
+    color: #7A7E8A;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 800;
+    border-bottom: 1px solid #2F3444;
+    transition: all 0.4s ease 0s;
+}
+
 #sidebar{
 	height: 100%;
 width: 255px;

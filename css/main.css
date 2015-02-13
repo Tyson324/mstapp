@@ -131,8 +131,12 @@ table {
 #wlcmHead{
 	font-family: SEGOEUIL;
 	margin-top: 75px;
-	font-size: 90px;
-	color: white;
+	background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position: center center;
+	height: 85px;
+	width: 200px;
 }
 #logInForm input{
 border: none;
