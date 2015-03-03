@@ -1,4 +1,0 @@
-mstapp
-======
-
-Apprentice app
